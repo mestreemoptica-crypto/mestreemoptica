@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visão de Mestre - Neurovendas Ópticas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0047FF;
+            --secondary: #00C853;
+            --dark: #1A1A1A;
+            --light: #F8F9FA;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            background-color: var(--light);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark) 0%, #333 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-family: 'Lexend', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .highlight { color: var(--primary); }
+
+        .subheadline {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,71,255,0.3);
+            margin: 10px;
+        }
+
+        .cta-button.whatsapp {
+            background-color: var(--secondary);
+            box-shadow: 0 10px 20px rgba(0,200,83,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .features {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: -50px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-item i {
+            color: var(--secondary);
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        .price-card {
+            text-align: center;
+            background: var(--dark);
+            color: white;
+            padding: 50px;
+            border-radius: 30px;
+            margin: 40px 0;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            opacity: 0.6;
+            font-size: 1.2rem;
+        }
+
+        .new-price {
+            font-size: 3.5rem;
+            display: block;
+            margin: 10px 0;
+            color: var(--secondary);
+            font-weight: 800;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .new-price { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Pare de ser um "Tirador de Pedidos" e torne-se um <span class="highlight">Especialista em Neurovendas.</span></h1>
+            <p class="subheadline">O Guia Prático para dominar o visagismo, simplificar lentes complexas e dobrar seu ticket médio na óptica.</p>
+            
+            <a href="https://chat.whatsapp.com/CkF29Mxzb7T5f1MjHAPhyM" class="cta-button">Entrar no Grupo VIP Gratuitamente</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="features">
+            <h2>O que você vai dominar:</h2>
+            <div class="feature-item">✔️ <strong>Neurociência da Abordagem:</strong> Hackeie os primeiros 4 segundos.</div>
+            <div class="feature-item">✔️ <strong>Visagismo Prático:</strong> Harmonize rostos e armações com precisão.</div>
+            <div class="feature-item">✔️ <strong>Engenharia de Lentes:</strong> Traduza o "tecniquês" em desejo de compra.</div>
+            <div class="feature-item">✔️ <strong>Ancoragem de Preço:</strong> Faça o produto Premium parecer a escolha mais lógica.</div>
+            <div class="feature-item">✔️ <strong>Scripts de Ouro:</strong> Modelos prontos para todas as objeções.</div>
+        </section>
+
+        <section style="text-align: center;">
+            <h2>Garantia de Satisfação Total</h2>
+        </section>
+
+        <div class="price-card">
+            <p>OFERTA EXCLUSIVA DE LANÇAMENTO</p>
+            <span class="old-price">De R$ 297,00</span>
+            <span class="new-price">R$ 19,90</span>
+            
+            <a href="https://wa.me/41996509734?text=Olá!%20Quero%20garantir%20meu%20acesso%20ao%20Guia%20Visão%20de%20Mestre" class="cta-button whatsapp">
+                COMPRA SEGURA (Falar com Autor no WhatsApp)
+            </a>
+            <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">Acesso imediato ao PDF após a confirmação.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Visão de Mestre - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
