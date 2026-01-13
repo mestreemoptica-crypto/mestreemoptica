@@ -14,7 +14,7 @@
             --dark: #1A1A1A;
             --light: #F8F9FA;
             --text: #333;
-            --accent: #FFD600; /* Cor para bônus */
+            --accent: #FFD600;
         }
 
         body {
@@ -68,11 +68,15 @@
             transition: transform 0.3s ease;
             box-shadow: 0 10px 20px rgba(0,71,255,0.3);
             margin: 10px;
+            border: none;
+            cursor: pointer;
         }
 
         .cta-button.whatsapp {
             background-color: var(--secondary);
             box-shadow: 0 10px 20px rgba(0,200,83,0.3);
+            width: 100%;
+            max-width: 400px;
         }
 
         .cta-button:hover { transform: translateY(-3px); }
@@ -85,6 +89,7 @@
             padding: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             margin-top: -50px;
+            margin-bottom: 40px;
         }
 
         .feature-item {
@@ -94,7 +99,26 @@
             font-size: 1.1rem;
         }
 
-        /* ESTILIZAÇÃO DOS BÔNUS */
+        /* ESTILIZAÇÃO DE AVALIAÇÕES */
+        .reviews-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .stars { color: #FFD700; font-size: 1.2rem; margin-bottom: 10px; }
+        
+        .client-name { font-weight: bold; margin-top: 15px; display: block; color: var(--primary); }
+
+        /* ESTILIZAÇÃO DOS BÔNUS COM IMAGEM */
         .bonus-section {
             background: #fff;
             border: 2px dashed var(--primary);
@@ -109,6 +133,22 @@
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 0 15px 15px 0;
+            display: flex; /* Layout lado a lado */
+            align-items: center;
+            gap: 20px;
+        }
+
+        .bonus-img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            flex-shrink: 0; /* Impede a imagem de encolher */
+            background-color: #ddd; /* Cor de fundo caso imagem falhe */
+        }
+
+        .bonus-content {
+            flex-grow: 1;
         }
 
         .bonus-tag {
@@ -119,6 +159,8 @@
             font-size: 0.8rem;
             border-radius: 5px;
             text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
         .bonus-price {
@@ -129,6 +171,7 @@
 
         .bonus-free { color: var(--secondary); font-weight: 800; }
 
+        /* PREÇO E GARANTIA */
         .price-card {
             text-align: center;
             background: var(--dark);
@@ -148,12 +191,23 @@
             font-weight: 800;
         }
 
+        .guarantee-img {
+            max-width: 150px;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
         footer { text-align: center; padding: 40px; font-size: 0.9rem; opacity: 0.7; }
 
         @media (max-width: 600px) {
             h1 { font-size: 2rem; }
             .new-price { font-size: 2.8rem; }
             .bonus-price { float: none; display: block; margin-top: 10px; }
+            .cta-button { width: 100%; box-sizing: border-box; }
+            
+            /* Ajuste mobile para bônus */
+            .bonus-card { flex-direction: column; text-align: center; }
+            .bonus-img { width: 120px; margin-bottom: 10px; }
         }
     </style>
 </head>
@@ -163,11 +217,15 @@
         <div class="container">
             <h1>Pare de ser um "Tirador de Pedidos" e torne-se um <span class="highlight">Especialista em Neurovendas.</span></h1>
             <p class="subheadline">O Guia Prático para dominar o visagismo, simplificar lentes complexas e dobrar seu ticket médio na óptica.</p>
-            <a href="#" class="cta-button">Quero o Guia + Bônus Exclusivos</a>
+            
+            <a href="https://chat.whatsapp.com/LINK_DO_GRUPO_AQUI" target="_blank" class="cta-button">
+                👉 Entrar no Grupo VIP Gratuitamente
+            </a>
         </div>
     </header>
 
     <div class="container">
+        
         <section class="features">
             <h2>O que você vai dominar:</h2>
             <div class="feature-item">✔️ <strong>Neurociência da Abordagem:</strong> Hackeie os primeiros 4 segundos.</div>
@@ -176,46 +234,84 @@
             <div class="feature-item">✔️ <strong>Ancoragem de Preço:</strong> Faça o produto Premium parecer a escolha mais lógica.</div>
         </section>
 
+        <h2 style="margin-bottom: 20px;">Quem aplicou, aprovou:</h2>
+        <section class="reviews-section">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Eu tinha muita dificuldade em vender multifocais premium. Com os scripts do módulo 3, fechei duas vendas de R$ 3.000 na mesma semana!"</p>
+                <span class="client-name">Ricardo M. - Gerente Óptico</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"Só o bônus da ferramenta de gestão já valeu o investimento. O Ebook é direto ao ponto, sem enrolação."</p>
+                <span class="client-name">Fernanda S. - Proprietária</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>"O manual Kids me salvou! Finalmente consegui treinar minha equipe para atender crianças com segurança."</p>
+                <span class="client-name">Carlos Eduardo - Consultor</span>
+            </div>
+        </section>
+
         <section class="bonus-section">
             <h2 style="margin-top:0;">🎁 Bônus Exclusivos (Apenas para esta oferta)</h2>
             
             <div class="bonus-card">
-                <span class="bonus-tag">Bônus 1</span>
-                <span class="bonus-price"><del>R$ 997,00</del> por <span class="bonus-free">GRÁTIS</span></span>
-                <h3>Ferramenta de Gestão e Disciplina</h3>
-                <p>O sistema "Consultor de Alta Performance" para gestão de colaboradores. (30 dias de acesso gratuito).</p>
+                <img src="https://cdn-icons-png.flaticon.com/512/2920/2920323.png" alt="Ferramenta de Gestão" class="bonus-img">
+                
+                <div class="bonus-content">
+                    <span class="bonus-tag">Bônus 1</span>
+                    <span class="bonus-price"><del>R$ 997,00</del> por <span class="bonus-free">GRÁTIS</span></span>
+                    <h3>Ferramenta de Gestão e Disciplina</h3>
+                    <p>O sistema "Consultor de Alta Performance" para gestão de colaboradores. (30 dias de acesso gratuito).</p>
+                </div>
             </div>
 
             <div class="bonus-card">
-                <span class="bonus-tag">Bônus 2</span>
-                <span class="bonus-price"><del>R$ 99,00</del> por <span class="bonus-free">GRÁTIS</span></span>
-                <h3>Ebook: O Mundo Kids das Óticas</h3>
-                <p>Manual prático de apresentação de produtos para o público infantil (Manual de Apresentação).</p>
+                <img src="https://cdn-icons-png.flaticon.com/512/3429/3429149.png" alt="Ebook Mundo Kids" class="bonus-img">
+                
+                <div class="bonus-content">
+                    <span class="bonus-tag">Bônus 2</span>
+                    <span class="bonus-price"><del>R$ 99,00</del> por <span class="bonus-free">GRÁTIS</span></span>
+                    <h3>Ebook: O Mundo Kids das Óticas</h3>
+                    <p>Manual prático de apresentação de produtos para o público infantil.</p>
+                </div>
             </div>
 
             <div class="bonus-card">
-                <span class="bonus-tag">Bônus 3</span>
-                <span class="bonus-price">PRESENTE</span>
-                <h3>Livro ADD+ Presbiopia na Melhor Idade</h3>
-                <p>Estratégias avançadas para atender e encantar o público 40+.</p>
+                <img src="https://cdn-icons-png.flaticon.com/512/3145/3145765.png" alt="Livro Presbiopia" class="bonus-img">
+                
+                <div class="bonus-content">
+                    <span class="bonus-tag">Bônus 3</span>
+                    <span class="bonus-price">PRESENTE</span>
+                    <h3>Livro ADD+ Presbiopia na Melhor Idade</h3>
+                    <p>Estratégias avançadas para atender e encantar o público 40+.</p>
+                </div>
             </div>
         </section>
 
-        <section style="text-align: center;">
-            <h2>Garantia de Satisfação Total</h2>
-            <p>Se em 7 dias você não sentir que sua abordagem evoluiu, devolvemos seu investimento.</p>
+        <section style="text-align: center; background-color: white; padding: 40px; border-radius: 20px; margin-bottom: 40px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/9465/9465132.png" alt="Selo Garantia 7 Dias" class="guarantee-img">
+            
+            <h2>Risco Zero: Garantia de 7 Dias</h2>
+            <p style="max-width: 600px; margin: 0 auto;">
+                Nós confiamos tanto no método Visão de Mestre que assumimos todo o risco. Se em 7 dias você achar que o material não é para você, devolvemos 100% do seu dinheiro. Sem perguntas.
+            </p>
         </section>
 
         <div class="price-card">
             <p>OFERTA EXCLUSIVA DE LANÇAMENTO</p>
             <span class="old-price">De R$ 1.393,00 (Guia + Bônus)</span>
-            <span class="new-price">R$ 97,00</span>
-            <p>ou em 10x de R$ 11,00 no cartão</p>
+            <span class="new-price">R$ 19,90</span>
+            <p>OFERTA EXCLUSIVA NO PIX R$19,90 ou em 10x de R$ 47,90 no cartão</p>
             
-            <a href="https://wa.me/SEUTELEFONE?text=Olá!%20Quero%20garantir%20meu%20acesso%20ao%20Guia%20Visão%20de%20Mestre%20e%20meus%20Bônus" class="cta-button whatsapp">
-                GARANTIR MEU ACESSO + BÔNUS
+            <a href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Gostaria+de+comprar+o+Guia+Vis%C3%A3o+de+Mestre+com+os+B%C3%B4nus+agora." target="_blank" class="cta-button whatsapp">
+                📲 GARANTIR MEU ACESSO AGORA
             </a>
-            <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">Acesso imediato ao material após a confirmação.</p>
+            
+            <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">
+                Compra Segura • Acesso Imediato • Suporte Direto com Produtor
+            </p>
         </div>
     </div>
 
