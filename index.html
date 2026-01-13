@@ -133,7 +133,7 @@
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 0 15px 15px 0;
-            display: flex; /* Layout lado a lado */
+            display: flex;
             align-items: center;
             gap: 20px;
         }
@@ -143,8 +143,8 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            flex-shrink: 0; /* Impede a imagem de encolher */
-            background-color: #ddd; /* Cor de fundo caso imagem falhe */
+            flex-shrink: 0;
+            background-color: #ddd;
         }
 
         .bonus-content {
@@ -197,6 +197,37 @@
             display: block;
         }
 
+        /* BOTÃO FLUTUANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-icon {
+            width: 35px;
+            height: 35px;
+            filter: brightness(0) invert(1);
+        }
+
         footer { text-align: center; padding: 40px; font-size: 0.9rem; opacity: 0.7; }
 
         @media (max-width: 600px) {
@@ -205,9 +236,16 @@
             .bonus-price { float: none; display: block; margin-top: 10px; }
             .cta-button { width: 100%; box-sizing: border-box; }
             
-            /* Ajuste mobile para bônus */
             .bonus-card { flex-direction: column; text-align: center; }
             .bonus-img { width: 120px; margin-bottom: 10px; }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            .whatsapp-icon { width: 28px; height: 28px; }
         }
     </style>
 </head>
@@ -258,7 +296,6 @@
             
             <div class="bonus-card">
                 <img src="https://cdn-icons-png.flaticon.com/512/2920/2920323.png" alt="Ferramenta de Gestão" class="bonus-img">
-                
                 <div class="bonus-content">
                     <span class="bonus-tag">Bônus 1</span>
                     <span class="bonus-price"><del>R$ 997,00</del> por <span class="bonus-free">GRÁTIS</span></span>
@@ -269,7 +306,6 @@
 
             <div class="bonus-card">
                 <img src="https://cdn-icons-png.flaticon.com/512/3429/3429149.png" alt="Ebook Mundo Kids" class="bonus-img">
-                
                 <div class="bonus-content">
                     <span class="bonus-tag">Bônus 2</span>
                     <span class="bonus-price"><del>R$ 99,00</del> por <span class="bonus-free">GRÁTIS</span></span>
@@ -280,7 +316,6 @@
 
             <div class="bonus-card">
                 <img src="https://cdn-icons-png.flaticon.com/512/3145/3145765.png" alt="Livro Presbiopia" class="bonus-img">
-                
                 <div class="bonus-content">
                     <span class="bonus-tag">Bônus 3</span>
                     <span class="bonus-price">PRESENTE</span>
@@ -292,7 +327,6 @@
 
         <section style="text-align: center; background-color: white; padding: 40px; border-radius: 20px; margin-bottom: 40px;">
             <img src="https://cdn-icons-png.flaticon.com/512/9465/9465132.png" alt="Selo Garantia 7 Dias" class="guarantee-img">
-            
             <h2>Risco Zero: Garantia de 7 Dias</h2>
             <p style="max-width: 600px; margin: 0 auto;">
                 Nós confiamos tanto no método Visão de Mestre que assumimos todo o risco. Se em 7 dias você achar que o material não é para você, devolvemos 100% do seu dinheiro. Sem perguntas.
@@ -302,18 +336,22 @@
         <div class="price-card">
             <p>OFERTA EXCLUSIVA DE LANÇAMENTO</p>
             <span class="old-price">De R$ 1.393,00 (Guia + Bônus)</span>
-            <span class="new-price">R$ 19,90</span>
-            <p>OFERTA EXCLUSIVA NO PIX R$19,90 ou em 10x de R$ 47,90 no cartão</p>
+            <span class="new-price">R$ 97,00</span>
+            <p>ou em 10x de R$ 11,00 no cartão</p>
             
-            <a href="https://wa.me/5500000000000?text=Ol%C3%A1%21+Gostaria+de+comprar+o+Guia+Vis%C3%A3o+de+Mestre+com+os+B%C3%B4nus+agora." target="_blank" class="cta-button whatsapp">
+            <a href="https://wa.me/5541996509734?text=Ol%C3%A1!%20Gostaria%20de%20comprar%20o%20Guia%20Vis%C3%A3o%20de%20Mestre%20com%20os%20B%C3%B4nus%20agora." target="_blank" class="cta-button whatsapp">
                 📲 GARANTIR MEU ACESSO AGORA
             </a>
             
             <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">
-                Compra Segura • Acesso Imediato • Suporte Direto com Produtor
+                Compra Segura • Acesso Imediato • Suporte Exclusivo Com Produtor
             </p>
         </div>
     </div>
+
+    <a href="https://wa.me/5541996509734?text=Ol%C3%A1!%20Estou%20na%20p%C3%A1gina%20do%20Ebook%20e%20tenho%20uma%20d%C3%BAvida." class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+    </a>
 
     <footer>
         <p>&copy; 2026 Visão de Mestre - Todos os direitos reservados.</p>
