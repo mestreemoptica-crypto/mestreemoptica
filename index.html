@@ -6,16 +6,15 @@
     <title>Visão de Mestre - Neurovendas Ópticas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #0047FF;
-            --primary-dark: #0033cc;
             --secondary: #00C853;
             --dark: #1A1A1A;
-            --light: #F4F6F9;
+            --light: #F8F9FA;
             --text: #333;
-            --white: #ffffff;
+            --accent: #FFD600; /* Cor para bônus */
         }
 
         body {
@@ -24,17 +23,13 @@
             color: var(--text);
             margin: 0;
             background-color: var(--light);
-            -webkit-font-smoothing: antialiased;
         }
 
-        /* --- HEADER --- */
         header {
-            background: linear-gradient(135deg, var(--dark) 0%, #2c3e50 100%);
+            background: linear-gradient(135deg, var(--dark) 0%, #333 100%);
             color: white;
-            padding: 80px 20px 100px 20px;
+            padding: 80px 20px;
             text-align: center;
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
         }
 
         .container {
@@ -45,39 +40,34 @@
 
         h1 {
             font-family: 'Lexend', sans-serif;
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             line-height: 1.2;
         }
 
-        .highlight { color: var(--primary); background: rgba(255,255,255,0.1); padding: 0 10px; border-radius: 8px; }
+        h2 { font-family: 'Lexend', sans-serif; text-align: center; margin-bottom: 30px; }
+
+        .highlight { color: var(--primary); }
 
         .subheadline {
             font-size: 1.25rem;
             opacity: 0.9;
             margin-bottom: 40px;
             font-weight: 400;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        /* --- BOTÕES --- */
         .cta-button {
             display: inline-block;
             background-color: var(--primary);
             color: white;
-            padding: 18px 35px;
+            padding: 20px 40px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
             box-shadow: 0 10px 20px rgba(0,71,255,0.3);
             margin: 10px;
-            border: none;
-            cursor: pointer;
-            text-align: center;
         }
 
         .cta-button.whatsapp {
@@ -85,179 +75,85 @@
             box-shadow: 0 10px 20px rgba(0,200,83,0.3);
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-        }
+        .cta-button:hover { transform: translateY(-3px); }
 
-        /* --- SEÇÃO PRINCIPAL (FEATURES) --- */
+        section { padding: 60px 0; }
+
         .features {
             background: white;
             border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            margin-top: -60px;
-            position: relative;
-            z-index: 10;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: -50px;
         }
 
         .feature-item {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-
-        .feature-item i {
-            color: var(--secondary);
-            margin-right: 15px;
-            font-size: 1.4rem;
-            min-width: 25px;
-            margin-top: 3px;
-        }
-
-        /* --- SEÇÃO MÓDULOS (SNEAK PEEK) --- */
-        .modules-section {
-            padding: 60px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'Lexend', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--dark);
-        }
-
-        .module-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Duas colunas no desktop */
-            gap: 20px;
-        }
-
-        .module-card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 5px solid var(--primary);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
-        }
-
-        .module-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .module-tag {
-            background: #eef2ff;
-            color: var(--primary);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .module-title {
-            font-weight: 700;
-            margin: 10px 0;
+            align-items: center;
+            margin-bottom: 15px;
             font-size: 1.1rem;
         }
 
-        .module-secret {
-            font-size: 0.95rem;
-            color: #555;
-            font-style: italic;
-            border-top: 1px dashed #ddd;
-            padding-top: 10px;
-            margin-top: 10px;
-        }
-
-        /* --- SEÇÃO DEPOIMENTOS --- */
-        .testimonials {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 20px;
+        /* ESTILIZAÇÃO DOS BÔNUS */
+        .bonus-section {
+            background: #fff;
+            border: 2px dashed var(--primary);
             border-radius: 20px;
+            padding: 40px;
             margin: 40px 0;
         }
 
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .testimonial-card {
-            background: rgba(255,255,255,0.1);
+        .bonus-card {
+            background: #f1f4ff;
+            border-left: 5px solid var(--primary);
             padding: 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+            border-radius: 0 15px 15px 0;
         }
 
-        .stars { color: #FFD700; margin-bottom: 10px; }
-        
-        .user-name {
+        .bonus-tag {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 5px 12px;
             font-weight: bold;
-            margin-top: 15px;
-            display: block;
-            color: var(--secondary);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            border-radius: 5px;
+            text-transform: uppercase;
         }
 
-        /* --- PREÇO E GARANTIA --- */
+        .bonus-price {
+            float: right;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .bonus-free { color: var(--secondary); font-weight: 800; }
+
         .price-card {
             text-align: center;
-            background: white;
-            color: var(--dark);
+            background: var(--dark);
+            color: white;
             padding: 50px;
             border-radius: 30px;
-            margin: 50px 0;
-            border: 2px solid var(--light);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 40px 0;
         }
 
-        .old-price { text-decoration: line-through; opacity: 0.6; font-size: 1.2rem; display: block; }
-        .new-price { font-size: 4rem; display: block; margin: 10px 0; color: var(--primary); font-weight: 800; line-height: 1; }
+        .old-price { text-decoration: line-through; opacity: 0.6; font-size: 1.2rem; }
 
-        .guarantee {
-            text-align: center;
-            padding: 30px;
-            background: #fff3cd;
-            color: #856404;
-            border-radius: 15px;
-            margin-bottom: 40px;
+        .new-price {
+            font-size: 4rem;
+            display: block;
+            margin: 10px 0;
+            color: var(--secondary);
+            font-weight: 800;
         }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-            opacity: 0.7;
-            border-top: 1px solid #ddd;
-        }
+        footer { text-align: center; padding: 40px; font-size: 0.9rem; opacity: 0.7; }
 
-        /* --- RESPONSIVIDADE (MOBILE) --- */
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             h1 { font-size: 2rem; }
-            .subheadline { font-size: 1rem; }
-            
-            /* Transforma grids em coluna única no celular */
-            .module-grid, .testimonial-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-button {
-                display: block;
-                width: 100%;
-                box-sizing: border-box;
-                margin: 10px 0;
-            }
-
-            .features { margin-top: -30px; padding: 30px 20px; }
-            .price-card { padding: 40px 20px; }
-            .new-price { font-size: 3rem; }
-            header { padding-bottom: 60px; }
+            .new-price { font-size: 2.8rem; }
+            .bonus-price { float: none; display: block; margin-top: 10px; }
         }
     </style>
 </head>
@@ -265,108 +161,67 @@
 
     <header>
         <div class="container">
-            <h1>Pare de ser um "Tirador de pedidos" e torne-se um <span class="highlight">Mestre de Neurovendas em Ótica.</h1>
-            <p class="subheadline">O Guia Prático para dominar o Salao de vendas, visagismo, simplificar lentes complexas e dobrar seu ticket médio na óptica.</p>
-            
-            <a href="https://chat.whatsapp.com/CkF29Mxzb7T5f1MjHAPhyM" class="cta-button">Entrar no Grupo VIP Grátis</a>
+            <h1>Pare de ser um "Tirador de Pedidos" e torne-se um <span class="highlight">Especialista em Neurovendas.</span></h1>
+            <p class="subheadline">O Guia Prático para dominar o visagismo, simplificar lentes complexas e dobrar seu ticket médio na óptica.</p>
+            <a href="#" class="cta-button">Quero o Guia + Bônus Exclusivos</a>
         </div>
     </header>
 
     <div class="container">
         <section class="features">
-            <h2 style="text-align: center; margin-bottom: 30px; font-family: 'Lexend', sans-serif;">Método Comprovado:</h2>
-            <div class="feature-item"><i>✔️</i> <div><strong>Neurociência da Abordagem:</strong> Hackeie os primeiros 4 segundos e gere confiança imediata.</div></div>
-            <div class="feature-item"><i>✔️</i> <div><strong>Visagismo Prático:</strong> A técnica para vender armações mais caras através da estética facial.</div></div>
-            <div class="feature-item"><i>✔️</i> <div><strong>Engenharia de Lentes:</strong> Traduza termos técnicos chatos em desejo incontrolável de compra.</div></div>
-            <div class="feature-item"><i>✔️</i> <div><strong>Ancoragem de Preço:</strong> Faça o produto Premium parecer barato comparado ao valor entregue.</div></div>
+            <h2>O que você vai dominar:</h2>
+            <div class="feature-item">✔️ <strong>Neurociência da Abordagem:</strong> Hackeie os primeiros 4 segundos.</div>
+            <div class="feature-item">✔️ <strong>Visagismo Prático:</strong> Harmonize rostos e armações com precisão.</div>
+            <div class="feature-item">✔️ <strong>Engenharia de Lentes:</strong> Traduza o "tecniquês" em desejo de compra.</div>
+            <div class="feature-item">✔️ <strong>Ancoragem de Preço:</strong> Faça o produto Premium parecer a escolha mais lógica.</div>
         </section>
 
-        <section class="modules-section">
-            <h2 class="section-title">O que tem dentro desse E-book?</h2>
-            <div class="module-grid">
-                <div class="module-card">
-                    <span class="module-tag">Módulo 1</span>
-                    <h3 class="module-title">A Neurociência da Abordagem</h3>
-                    <div class="module-secret">"Descubra a frase exata que substitui o 'Posso ajudar' e impede o cliente de dizer 'Só estou olhando'."</div>
-                </div>
-                <div class="module-card">
-                    <span class="module-tag">Módulo 2</span>
-                    <h3 class="module-title">A Pergunta de Ouro</h3>
-                    <div class="module-secret">"A técnica do Iceberg: Como descobrir a dor oculta que faz o cliente ignorar o preço."</div>
-                </div>
-                <div class="module-card">
-                    <span class="module-tag">Módulo 3</span>
-                    <h3 class="module-title">Visagismo Estratégico</h3>
-                    <div class="module-secret">"Geometria Facial: O guia visual para indicar a armação perfeita em 30 segundos."</div>
-                </div>
-                <div class="module-card">
-                    <span class="module-tag">Módulo 4</span>
-                    <h3 class="module-title">Traduzindo "Tecniquês"</h3>
-                    <div class="module-secret">"A analogia da 'Mala de Viagem' que me faz vender lentes de alto índice todos os dias."</div>
-                </div>
-                <div class="module-card">
-                    <span class="module-tag">Módulo 5</span>
-                    <h3 class="module-title">Fechamento e Preço</h3>
-                    <div class="module-secret">"Como usar o silêncio e a ancoragem para vender o orçamento mais alto sem medo."</div>
-                </div>
-                <div class="module-card">
-                    <span class="module-tag">Módulo 6</span>
-                    <h3 class="module-title">A Máquina de Indicações</h3>
-                    <div class="module-secret">"O roteiro de pós-venda de 48h que elimina o arrependimento e gera fãs."</div>
-                </div>
+        <section class="bonus-section">
+            <h2 style="margin-top:0;">🎁 Bônus Exclusivos (Apenas para esta oferta)</h2>
+            
+            <div class="bonus-card">
+                <span class="bonus-tag">Bônus 1</span>
+                <span class="bonus-price"><del>R$ 997,00</del> por <span class="bonus-free">GRÁTIS</span></span>
+                <h3>Ferramenta de Gestão e Disciplina</h3>
+                <p>O sistema "Consultor de Alta Performance" para gestão de colaboradores. (30 dias de acesso gratuito).</p>
+            </div>
+
+            <div class="bonus-card">
+                <span class="bonus-tag">Bônus 2</span>
+                <span class="bonus-price"><del>R$ 99,00</del> por <span class="bonus-free">GRÁTIS</span></span>
+                <h3>Ebook: O Mundo Kids das Óticas</h3>
+                <p>Manual prático de apresentação de produtos para o público infantil (Manual de Apresentação).</p>
+            </div>
+
+            <div class="bonus-card">
+                <span class="bonus-tag">Bônus 3</span>
+                <span class="bonus-price">PRESENTE</span>
+                <h3>Livro ADD+ Presbiopia na Melhor Idade</h3>
+                <p>Estratégias avançadas para atender e encantar o público 40+.</p>
             </div>
         </section>
 
-        <section class="testimonials">
-            <h2 class="section-title" style="color:white; margin-bottom: 30px;">Quem aplicou, aprovou:</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Eu tinha medo de oferecer multifocais premium. Depois de usar a técnica da 'Ancoragem', fechei uma venda de 3k na mesma semana. O material se pagou 30x."</p>
-                    <span class="user-name">Ricardo M. - Gerente de Ótica</span>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"O Guia de Bolso com os scripts salvou meu atendimento. Agora sei exatamente o que responder quando o cliente diz que 'está caro'."</p>
-                    <span class="user-name">Ana Clara - Consultora</span>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Direto ao ponto. Sem enrolação. É ciência aplicada ao balcão. A parte sobre visagismo mudou a forma como meus clientes me enxergam."</p>
-                    <span class="user-name">Carlos Eduardo - Proprietário</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="guarantee">
-            <h3 style="margin-top:0">🔒 Risco Zero</h3>
-            <p>Se em 7 dias você achar que este conhecimento não vale o investimento, eu devolvo 100% do seu dinheiro. Sem perguntas.</p>
+        <section style="text-align: center;">
+            <h2>Garantia de Satisfação Total</h2>
+            <p>Se em 7 dias você não sentir que sua abordagem evoluiu, devolvemos seu investimento.</p>
         </section>
 
         <div class="price-card">
-            <p style="letter-spacing: 2px; font-size: 0.9rem; font-weight:bold; color:var(--dark);">OFERTA POR TEMPO LIMITADO</p>
-            <span class="old-price">De R$ 297,00</span>
-            <span class="new-price">R$ 19,90</span>
-            <p>Acesso imediato ao Ebook + Bônus Exclusivos</p>
+            <p>OFERTA EXCLUSIVA DE LANÇAMENTO</p>
+            <span class="old-price">De R$ 1.393,00 (Guia + Bônus)</span>
+            <span class="new-price">R$ 97,00</span>
+            <p>ou em 10x de R$ 11,00 no cartão</p>
             
-            <div style="margin-top: 30px;">
-                <a href="https://wa.me/41996509734?text=Olá!%20Li%20a%20página%20e%20quero%20o%20Guia%20Visão%20de%20Mestre" class="cta-button whatsapp">
-                    QUERO COMPRAR AGORA
-                </a>
-            </div>
-            
-            <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.6;">
-                🔒 Pagamento Seguro. Entrega via PDF no WhatsApp/E-mail.
-            </p>
+            <a href="https://wa.me/SEUTELEFONE?text=Olá!%20Quero%20garantir%20meu%20acesso%20ao%20Guia%20Visão%20de%20Mestre%20e%20meus%20Bônus" class="cta-button whatsapp">
+                GARANTIR MEU ACESSO + BÔNUS
+            </a>
+            <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">Acesso imediato ao material após a confirmação.</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Visão de Mestre. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Visão de Mestre - Todos os direitos reservados.</p>
     </footer>
 
 </body>
 </html>
-
-
-
