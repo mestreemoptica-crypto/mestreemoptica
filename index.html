@@ -17,6 +17,10 @@
             --accent: #FFD600;
         }
 
+        * {
+            box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+        }
+
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -57,11 +61,12 @@
             font-weight: 400;
         }
 
+        /* FORMATACAO DOS BOTOES */
         .cta-button {
             display: inline-block;
             background-color: var(--primary);
             color: white;
-            padding: 20px 40px;
+            padding: 20px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
@@ -72,13 +77,8 @@
             border: none;
             cursor: pointer;
             text-align: center;
-        }
-
-        .cta-button.whatsapp {
-            background-color: var(--secondary);
-            box-shadow: 0 10px 20px rgba(0,200,83,0.3);
-            width: 100%;
-            max-width: 400px;
+            width: auto; /* Desktop mantém tamanho do texto */
+            max-width: 100%;
         }
 
         .cta-button:hover { transform: translateY(-3px); }
@@ -185,35 +185,22 @@
             display: block;
         }
 
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-icon { width: 35px; height: 35px; filter: brightness(0) invert(1); }
-
         footer { text-align: center; padding: 40px; font-size: 0.9rem; opacity: 0.7; }
 
+        /* RESPONSIVIDADE PARA CELULAR */
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             .new-price { font-size: 3rem; }
             .bonus-card { flex-direction: column; text-align: center; padding: 30px 15px; }
             .bonus-price { float: none; display: block; margin-bottom: 10px; }
-            .cta-button { width: 100%; padding: 15px 20px; }
-            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+            
+            /* Botões ocupam a largura total no celular */
+            .cta-button { 
+                display: block;
+                width: 100%; 
+                padding: 18px 10px; 
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -304,19 +291,18 @@
         <div class="price-card">
             <p>OFERTA EXCLUSIVA DE LANÇAMENTO</p>
             <span class="old-price">De R$ 1.393,00 (Guia + Bônus)</span>
-            <span class="new-price">R$ 19,90</span>
+            <span class="new-price">R$ 24,90</span>
             <p>Pagamento único com acesso vitalício</p>
-          </a>  
-        <a href="https://pay.kiwify.com.br/Fla9pcP" class="cta-button">
-    🚀 GARANTIR MEU ACESSO AGORA
+            
+            <a href="https://pay.kiwify.com.br/Fla9pcP" class="cta-button">
+                🚀 GARANTIR MEU ACESSO AGORA
             </a>
+            
             <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">
                 Compra Segura • Acesso Imediato • Suporte VIP
             </p>
         </div>
     </div>
-
-    
 
     <footer>
         <p>&copy; 2026 Visão de Mestre - Todos os direitos reservados.</p>
@@ -324,8 +310,3 @@
 
 </body>
 </html>
-
-
-
-
-
